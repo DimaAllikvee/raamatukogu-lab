@@ -15,6 +15,7 @@ router.get("/search", (req, res) => {
   }
   let results = data.books;
   if (title) results = results.filter((b) => b.title.toLowerCase().includes(title.toLowerCase()));
+  // Otsing autori järgi
   if (author) results = results.filter((b) => b.author.toLowerCase().includes(author.toLowerCase()));
   res.json({ results, count: results.length });
 });
